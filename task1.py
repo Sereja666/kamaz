@@ -60,24 +60,25 @@ class Pareser:
             submit_button = None
             for el in elements:
                 ng_reflect_name = el.get_attribute("ng-reflect-name")
+
                 if ng_reflect_name is not None:  # кнопка Submit почему-то тоже считается input
                     el.send_keys(row[ng_reflect_name])
 
-                    print(ng_reflect_name)
                 if ng_reflect_name is None:
                     submit_button = el  # если нашлась кнопка с None - она является Submit, сохраняем, чтоб после кликнуть
+
             submit_button.click()
 
     def init_connect(self):
         options = Options()
         # options.add_argument('--headless')
-        # options.add_argument('--disable-gpu')  # Last I checked this was necessary.
+        # options.add_argument('--disable-gpu')
 
         # Initialize Chrome WebDriver
         self.driver = webdriver.Chrome(options=options)
         self.driver.get(self.URL)
-        self.main_page = self.driver.page_source
-        # print(self.main_page)
+
+
 
     def get_xls(self):
         response = requests.get(self.url_xlsx)
@@ -104,6 +105,6 @@ class Pareser:
             print('Ошибка: ', err.args[1])
 
 
-# не забыть бы Логи и тесты
+
 robot = Pareser()
 robot.act()
