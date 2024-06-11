@@ -46,7 +46,7 @@ class Pareser:
         self.filling_fields()  # заполняю поля
         time.sleep(1)  # наслаждаюсь вкусом победы
         self.driver.save_screenshot("task1.png")
-        time.sleep(10)  # наслаждаюсь вкусом победы
+        time.sleep(3)  # наслаждаюсь вкусом победы
         self.driver.quit()
 
     def start_challenge(self):
@@ -100,7 +100,7 @@ class Pareser:
                                     'Email': 'labelEmail',
                                     'Phone Number': 'labelPhone',
                                     }, inplace=True)
-            print(self.df.to_string())
+            # print(self.df.to_string())
         except PermissionError as err:
             print('Ошибка: ', err.args[1])
 
