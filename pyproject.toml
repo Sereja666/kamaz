@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "kamaz"
 version = "0.1.0"
-description = ""
+description = "тестовое задание"
 authors = ["Sereja <sermatrena@gmail.com>"]
 readme = "README.md"
 
